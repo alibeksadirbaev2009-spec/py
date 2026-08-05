@@ -1,0 +1,76 @@
+# ./ - usi jerde 
+# table
+# sirtqi ta'sir - asinxro
+# belgi var chart
+
+# def qilip
+a = "03094"
+a.isdigit
+# jasi 
+
+
+
+# Database - relation - sql, non rekation - nosql           sql lite / post sql
+# INTEGER - integer
+# VARCHAR - string
+# CRUD - create, read, update, delate
+
+# ALTER TABLE USERS DROP / ADD CULUMN lastname;
+
+
+import sqlite3
+db = sqlite3.connect("database.sql")
+cur = db.cursor()
+
+# keste jaratiw
+cur.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY, name VARCHAR NOT NULL, age INT
+);
+""")
+
+
+# create
+cur.execute("""
+INSERT INTO users (name, age) VALUES (?, ?);
+""", ('Dillon', 45))
+print(cur.fetchone())
+db.commit() # Saqlaw
+
+# read 
+cur.execute("SELECT * FROM users;")
+data: list[tuple] = cur.fetchall()
+for i in data:
+    print(i[0], i[1], i[2])
+
+# update 
+cur.execute("""
+UPDATE users SET name = 'Palenshe'
+""")
+db.commit()
+
+cur.execute("""
+DELETE FROM users;
+""")
+db.commit()
+
+cur.close()
+db.close
+#  DROP TABLE users_info   - table o'shiriw
+
+
+# CREATE TABLE IF NOT EXISTS users (
+#     id INTEGER PRIMARY KEY,
+#     name VARCHAR NOT NULL,
+#     age INT
+# );
+
+# INSERT INTO users (name, age) VALUES ('John', 45);
+# commit
+
+
+# SELECT * FROM users;
+
+# UPDATE users SET name='Palenshe' WHERE id = 4;
+
+# DELETE FROM users WHERE id = 4;

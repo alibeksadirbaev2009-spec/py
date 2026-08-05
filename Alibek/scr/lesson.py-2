@@ -1,0 +1,85 @@
+# Variables - o'zgeriwshiler
+# Dynamic
+
+age = 20
+name = "John"
+
+# snack_case
+first_name = "John"
+last_name = "Smith"
+
+FirstName = "Steve"
+
+
+
+a2 = 78
+A = 45
+a1 = 3
+
+print(a2)
+print(a1)
+print(a2 + A * a1)
+
+# String Formating 
+a = "Hello World"
+
+#  Methods - metodlari
+print(a.upper())  # U'llken ha'riplerge almastiriw
+print(a.lower()) # Kishi ha'riplerge almastiriw ASCII
+print(a.casefold()) # Kishi ha'riplerge almastiriw UNICOSE
+
+print(a.capitalize()) # Tek birinshi basindagi ha'rip u'lken boladi qalagan ha'mmesi kishi
+print(a.title()) # probelden keyingi ha'mme ha'rip u'lken boladi
+print(a.replace("l", "k")) # bir ha'riptin ornina basqa ha'rip kiritiw
+
+# Slicing
+print(a[2])
+print(a[2:9])
+print(a[0 : 9 : 2])
+print(a[ : : -1]) # "Start.Stop.Period" 0 = joq shegarasiz
+
+# formating 
+name = "John"
+age = 29
+
+# 1
+print("My name is "+name+ " I am 29")
+
+# 2
+pattern = "My name is %s, I am %d"
+print(pattern %(name, age))
+
+# 3
+pattern2 = "My name is {0}, I am {1}"
+print(pattern2.format(name, age))
+pattern3 = "My name is {name}, I am {age}"
+print(pattern3.format(name = name, age = age))
+
+# 4 f - string
+print(f"My name is {name}, I am {age}")
+
+#  Tapsirma
+
+first_name = "Ran"
+last_name = "Takahashi"
+born = 2003
+current_year = 2026
+
+print(f"My name is {first_name} {last_name}, I am {current_year - born} years old")
+
+# Homework
+# 1 harbir sozdi ajiratip jaziw
+c = "Lorem Ipsum is a standard placeholder text used in printing, " 
+"typesetting, and digital design to simulate content without distracting "
+"from layout."
+l = c.split(" ")
+print(l)
+#  so'z sanaw 
+g = c.split(" ")
+print(len(g))
+
+
+# 2
+file = "c:/User/user/desktop/lesson.py"
+k = file.split("/")
+print(k[-1])

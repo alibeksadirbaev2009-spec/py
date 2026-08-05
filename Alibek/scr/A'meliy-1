@@ -1,0 +1,72 @@
+"""a = int(input("a = "))
+b = int(input("b = "))
+if  a % b == 0:
+    print("a b g'a bo'linedi")
+else :
+    print(" a b ga' bo'linbeydi")
+
+#  a, b* = [1, 23, 4]"""
+
+"""
+k = int(input("k = "))
+l = int(input("l = "))
+c = int(input("c = "))
+
+kc = c - k
+lc = c - l
+"""""""
+q = int(input("q = ")) # 728
+m = q // 10 # 72
+h = m % 10 # 2
+
+if h == 2:
+    print("boladi")
+else:
+    print("bolmaydi") """
+"""
+ss = input("ss = ")
+
+if ss[0] == ss[0].upper():
+    print("awa")
+else:
+    print("yaq")"""
+
+# a = 1 - 12
+# Ma'wsim tabiw kk
+
+# kardinata
+#  x = input()
+#  y = input()
+#  qaysi sherek
+
+
+# 1
+k = 1 -12
+k = int(input("k = "))
+if k == 12 or k == 1 or k == 2:
+    print("Winter")
+elif k == 3 or k == 4 or k == 5:
+    print("Spring")
+elif k == 6 or k == 7 or k == 8:
+    print("Summer")
+elif k == 9 or k == 10 or k == 11:
+    print("Autumn") 
+else:
+    print("Mistake")  
+
+# 2
+# 1 x == + , y == + (+ > o and -  < 0)
+# 2 x == - , y == +
+# 3 x == - , y == -
+# 4 x == + , y == - (> <)
+x = int(input("x = "))
+y = int(input("y = "))
+
+if x > 0 and y > 0:
+    print("1 - Sherek")
+elif x < 0 and y > 0:
+    print("2 - Sherek")
+elif x < 0 and y < 0:
+    print("3 - Sherek")
+else:
+    print("4 - Sherek")

@@ -1,0 +1,107 @@
+# # *args, **kwargs
+
+# # *args - tuple
+def my_func(*args) -> int:
+    t = 0
+    for i in args:
+        t += 1
+    return t
+
+print(my_func(5, 4, 3, 3, 1, 55, 3, 3333))
+
+# kwargs - dict      imutabel mutable         h lanatin
+def my_func1(**kwargs):
+    return kwargs
+
+print(my_func1(age = 6, name = "John"))
+
+def summa(*args: int) -> int:
+    t = 0
+    for i in args:
+        if isinstance(i, int):
+            t += i
+    return t
+print(summa(2, 4, 55, 3))
+
+# 1
+# # wrong !!!!
+# def average(**subjects: int) -> dict:
+#     orta = sum(subjects.values()) / len(subjects)
+#     round(orta, 1)
+#     eng_ulken_pan = max(subjects)
+#     return orta, eng_ulken_pan
+# print(average(maths = 33, pt = 44, gmmb = 54))
+
+
+# # right
+# def avg(**kwargs: int) -> dict:
+#     k = sum(kwargs.values() / len(kwargs))
+#     l = max(kwargs, key=kwargs.get)
+#     return{
+#         'avg':round(k, 1),
+#         'max_key': l,
+#         'max_value':max(kwargs.values())
+    # }
+# print(avg(matematika = 98, fizika = 48, geo = 68))
+
+# # moduller  (-m venv .venv)
+# . - qasinan izle
+# pip 
+# mrdir
+# rmdir
+# powershel
+# cmd
+# windows + d, strelka, r
+# instal, clc, clear
+# uninstal
+
+def count_letters(*args: str) ->dict:
+    upper = 0
+    lower = 0
+    for text in args:
+        if isinstance(text, str):
+            for i in text:
+                if 'A' <= i <= 'Z':
+                    upper += 1
+                elif 'a' <= i <= 'z':
+                    lower += 1
+                    
+    return {'up': upper, 'low': lower}
+
+print(count_letters('H', 's', 'd', 'W'))
+
+
+# 2
+def triangle(a: int, b: int, c: int) -> int:
+    if not (isinstance(a, (int, float)) and
+            isinstance(b, (int, float)) and  
+            isinstance(c, (int, float))):
+        raise TypeError("Ta'repleri int yamasa float boliwi kerek")
+    
+    if a <= 0 or b <= 0 or c <= 0:
+        raise ValueError("Ta'repleri 0 den u'lken boliwi kerek")
+    
+    if not (a + b > c and a + c > b and b + c > a):
+        raise ValueError("U'shmu'yish bola almaydi")
+    
+    perimetr = a + b + c
+    print("Perimetr:", perimetr)
+
+triangle(10, 1, 10)
+
+# is_dbfh -  soraw ma  -  bool, true / false 
+
+
+# 2.1
+
+def perimetr(a: int, b: int, c: int) -> int:
+    if not (
+        a + b < c
+        and a + c < b
+        and b + c < a
+    ):
+        raise ValueError("U'shmu'yish bola almaydi")
+    
+    return a + b + c
+
+print(perimetr(4, 2, 2))

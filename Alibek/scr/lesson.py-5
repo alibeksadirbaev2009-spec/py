@@ -1,0 +1,79 @@
+# Dictonary 
+
+# Element - 5, "h"  ----> set, tuple, list
+# Element - key, value ----> dictonary
+# key: value
+# key - gil (gilt so'z)
+# value - ma'nis
+# O'zgeriwshen'
+# key - string                 tip tarepinen, manis tarepinen - list
+# value - any
+
+d = {
+    "key1": "value1",
+    "key2": "value2"
+}
+print(d.get("key3"))
+# joq bolsa = None
+# tek gil so'z
+
+
+
+# bilsek qosip qoysaq boladi 
+# eger kop bolsa taza zatqa tengegen maqul
+
+d1 = {"key5": "value5"}
+d2 = {"key6": "value6"}
+d1.update(d2)  # or
+d1.update({"key6": "value6"})
+print(d1)
+
+
+car = [
+    {"name": "BMW",
+    "model": "M8",
+    "year": 2025
+    }, 
+    {"name": "BMW",
+     "model": "M5",
+       "year": 2023
+    }
+]
+d = {
+    "key1": "value1",
+    "key2": "value2"
+    }
+    
+print(d.keys())
+print(d.values())
+
+
+# element ma'nisin o'zgertiw
+d["key2"] = "valueeee"
+print(d)
+a = d.pop("key1")
+print(d)
+
+# gilt so'zdi o'zgertiw
+d["qalay"] = a
+print(d)
+
+user = {
+    "first_name": "Alibek",
+    "last_name": "Sadirbaev",
+    "born": 2009,
+    "phone_number": "+998 (94) 469 10-25",
+    "addres": "Talantli_3"
+       }
+user.update({"age": 2026 - user.get("year",2009)})
+# eger berilmegen bolsa user.update ({"age": 2026 - user.get(2026)})
+
+land = {
+    "Java": 1990,
+    "Python": 1991
+    
+    
+    }
+
+t = land.get("cpp")
+print(t is not None)

@@ -1,0 +1,216 @@
+# OOP - Object Oriented Programming
+# Class, Object
+# class - shablon
+# object - obekt
+# () bolmasa adr
+# class MyClass:
+#     def __init__(self, a: int, b: int): # init  dunder method
+#         self.a = a
+#         self.b = b
+
+#     def plus(self) -> int:
+#         return self.a + self.b
+    
+#     def minus(self) -> int:
+#         return self.a - self.b 
+    
+# obj = MyClass(5, 6) # object
+# print(obj.minus())
+
+
+
+# class MyClass1:
+#     def __init__(self, l: int):
+#         if not isinstance(l, list):
+#             raise ValueError("List kerek")
+#         self.l = l
+
+#     def summa(self):
+#         return sum(self.l)
+    
+#     def length(self):
+#         return len(self.l)
+    
+#     def orv(self) -> float:
+#         k = self.length()
+#         s = self.summa()
+#         return round(s / k, 1)
+    
+    # dunder methods kk jerde qollaniladi ha'r dayim emes
+
+#     def __str__(self):
+#         return "qalay"
+    
+#     def __len__(self):
+#         return self.length()
+    
+#     def __call__(self):
+#         return "qwe" 
+    
+# obj1 = MyClass1([2, 3, 5])
+# print(len(obj1))
+
+
+
+# class square 4 maydan, perimetr  
+
+# class square:
+#     def __init__(self, m: int, n: int) -> int:
+#         if not isinstance(m, int) or not isinstance(n, int):
+#                raise ValueError("int kk")
+#         self.m = m
+#         self.n = n
+
+#     def area(self):
+#         return self.m * self.n
+    
+#     def perimetr(self):
+#         return 2 *(self.m + self.n) 
+    
+# obj = square(10, "5")
+
+# print(obj.area())
+# print(obj.perimetr())
+
+
+# 4 metodi
+# 1 encapsulation, inheritance, polimorphism, 
+
+
+
+
+# ush muyishlik perimetr, bola alama bola almayma, h, maydan
+
+
+import math
+class Triangle:
+    def __init__(self, a: int, b: int, c: int) -> float:
+        if not isinstance(a, (int, 
+float)) or not isinstance(b, (int, 
+float)) or not isinstance(c, (int, float)):
+            raise TypeError("Ta'repleri int yamasa float boliwi kerek")
+        
+        if a <= 0 or b <= 0 or c <= 0:
+            raise ValueError("Ta'repleri 0 den u'lken boliwi kerek")
+        
+        if not (a + b > c and a + c > b and b + c > a):
+            raise ValueError("U'shmu'yish bola almaydi")
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def height(self): # univesal kk 
+        return self.a * self.b / self.c
+
+    def type_triangle(self):
+        if self.a == self.b == self.c:
+            return "Ten' ta'repli"
+        elif self.a == self.b or self.a == self.c or self.b == self.c:
+            return "Ten' qaptalli"
+        else:
+            return "Turli ta'repli"
+
+    def perimetr(self):
+        return self.a + self.b + self.c
+
+    def area(self):
+        y_p = (self.a + self.b + self.c ) / 2
+        return math.sqrt(y_p * (y_p - self.a) * (y_p - self.b) * (y_p - self.c))
+    
+    def height(self):
+        return self.a * self.b / self.c
+
+
+k = Triangle(3, 4, 5)
+print("Triangle height:", k.height())
+print("Tip_Triangle:", k.type_triangle())
+print("Triangle perimetiri:", k.perimetr())
+print("Triangle area:", k.area())
+
+
+
+
+# 4 metodi
+# 1 encapsulation, Inheritance, Polimorphism, Abstraction -> principler OOP nin'
+
+
+# encapsulation sirttag'i ta'sirden saqlaw
+class MyClass:
+    def __init__(self, a, b):
+        self.a = a
+        self.__b = b
+    
+    def get_public(self):
+        return self.a
+    
+    def get_enc(self):
+        return self.__b
+    
+    def edit(self, b):
+        self.__b = b
+        return b
+
+o = MyClass(5, 6)
+
+# o.edit(3) # ma'nis o'gertiw
+# print(o.get_enc())
+
+# Inheritance (Miyras aliw)
+class ParentClass:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def plus(self):
+        return self.a + self.b
+    
+class ChildClass(ParentClass):
+    def __init__(self, t):
+        super().__init__(t, t + 10)
+
+    def minus(self):
+        return self.a - self.b
+
+a = ChildClass(5)
+print(a.plus())
+
+# Polimorphism                                boliwi mu'mkin -> u'shewindeda' birdey method
+# ha'r tu'rli klasslar bir metoddi boliwi sol metoddi islewi
+
+class MyClass1(ParentClass):
+    def plus(self):
+        return 1
+
+class MyClass2(ParentClass):
+    def plus(self):
+        return 2
+
+class MyClass3(ParentClass):
+    def plus(self):
+        return 3
+    
+l: list = [MyClass1(1, 2), MyClass2(3, 4), MyClass3(5, 6)] 
+
+for i in l:
+    print(i.plus())
+
+# Abstraction
+# kim miyras alsa soldada sonday abstramethod boliwi sha'rt
+from abc import ABC, abstractmethod
+
+class ClassO(ABC):
+    @abstractmethod
+    def hello(self):
+        return "Hello"
+    
+class ClassA(ClassO):
+    def hello(self):  # hello abstract metodi boliwi sha'rt
+        return "Qalay"
+    
+h = ClassA()
+print(h.hello())
+
+
+
+# geo abc class eki //  area, perimetr metodi
+# miyras figuralar ozgeriwshiler incaptsuliyatsiya sirtan ozgertilmewi k

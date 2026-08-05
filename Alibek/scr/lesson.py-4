@@ -1,0 +1,81 @@
+# bool 
+a = [5, 7, 8, 9, 4]
+b = None
+
+t = 6
+print(t > 3)
+print(t < 10)
+print(t >= 6)
+print(t == 10)
+print(t != 10)
+print(t == 6)
+
+# in, not in
+print(3 in a)
+print(10 not in a)
+
+# and, or, not
+# and bizde kobeytiw /  or qosiw / not biykarlaw
+print(t > 0 and t < 5)
+print(t == 100 or t < 10)
+
+print(not (t > 0 or t > 20))
+
+print(not b)
+
+a = [5, 9, 4]
+print(tuple(a))
+
+# Set - set - {4, 5, 6, 7, 8, 4,}
+a = {7, 5, 4, 2, 3}
+
+# Unikal element, dublikatlarsiz 
+# Sortlang'an izbe-izlik
+# Ha'rbir tu'rdegi ma'liwmatlardi saqlay aladi
+
+# Mag'liwmatlardi qosiw
+a.add(3)
+print(a)
+
+# Ju'klew 
+a.update({9, 8})
+print(a)
+
+# En' birinshi elementti alip taslaw
+t = a.pop()
+print(a)
+print(t)
+
+# Ma'nisi boyinsha alip taslaw
+a.remove(5)  # 5 ti alip taslaydi
+print(a)
+
+# Bar bolsa alip taslaydi joq bolsa eshtene
+a.discard(111)
+print(a)
+# Biriktiriw
+a = {4, 5, 6, 7}
+b = {7, 8, 9, 10}
+print(a | b)
+print(a.union(b))
+
+# Kesilispe birdey eki element
+print(a & b)
+print(a.intersection(b))
+
+# Ayirma
+print(a - b)
+print(a.difference(b))
+
+print(b - a)
+print(b.difference(a))
+
+# Tapsirma
+k = {2, 3, 4, 6}
+l = {5, 6, 7, 1}
+g = k - l
+f = l - k
+print(g)
+print(f)
+h = g | f 
+print(sum(h))

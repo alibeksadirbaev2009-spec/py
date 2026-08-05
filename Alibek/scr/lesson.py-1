@@ -1,0 +1,11 @@
+# Comment
+# Data types - Mag'liwmat tu'rleri
+# Nonetypes - None
+# Integer - int - sanlrag'a - 3, 3, 4, 5
+# String - tekstler - "Hello", 'Hello'
+# Float - float - bo'lshek sanlarg'a - 2.4, 4.3, 2.2
+# Bollean - bool - logiqaliq mag'liwmatlar - "True/False" , False--> 0, 0.0, None
+# Complex - complex - matematikaliq sanlar - 4j, 5j, 6j  <j>
+
+# input - input
+# output - print

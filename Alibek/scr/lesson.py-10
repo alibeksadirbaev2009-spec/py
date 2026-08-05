@@ -1,0 +1,62 @@
+# while - loop
+a = 10
+i = 0 
+
+while i < a:
+    i += 1
+    print(i)
+else:
+    print("Toqtadi")
+
+
+
+
+k = int(input("k = "))
+i = 0
+
+while i < k:
+    i += 1
+    print(i)
+
+t = 0
+
+while True:
+    l = int(input("l = "))
+    if l == 0:
+        break
+    t += l
+    
+print(t)
+n = int(input("n = "))
+t = 1
+c = 1
+while t <= n:
+    c *= t
+    t += 1
+
+print(c)
+   
+
+1
+from random import randint
+
+r = randint(0, 15)
+print(r)
+
+#  list 10 element 
+# qaytalanbas 
+from random import randint
+r = randint(0, 50)
+print(r)
+
+# 2 
+from random import randint
+k = []
+i = 0 
+while i < 10:
+    r = randint(0 ,50)
+    if r not in k:
+        k.append(r)
+        i += 1
+
+print(k)

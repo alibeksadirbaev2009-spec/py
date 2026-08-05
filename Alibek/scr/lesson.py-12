@@ -1,0 +1,72 @@
+# function 
+# def
+# return - juwap qaytariw (na'tiyje)
+# yild - juwap qaytariw (generatciya)
+# raise - qa'telikti qaytriw
+def SAA():
+    print(1)
+    print(2)
+    print(3)
+
+SAA()
+SAA()
+def SAA1():
+    for i in range(5):
+        return i 
+
+print(SAA1())
+
+
+# 1 
+def my_func1():
+    a = 9
+    return a
+
+print(my_func1)
+
+# 2
+def my_func2():
+    yield 5
+
+for i in my_func2():
+    print(i)
+
+# 3
+def my_func3():
+    raise Exception("Qatelik")
+
+# Parametrler 
+def my_func4(a: int, b: int) -> str:
+    return a + b
+
+print(my_func4(5, 7))
+
+# Default 
+def my_func5(a: int, b = int | None) -> str:
+    return a + b
+
+print(my_func5(65, 23))
+
+# Qate - Bulay jazban' !
+def my_func6(a: list =[]):
+    a.append(9)
+    return a
+
+print(my_func6([]))
+
+
+
+
+
+
+def intro(k: str) -> str:
+    return "Hello " + k
+
+print(intro("Alibek"))
+
+
+def is_even(l: int) -> bool:
+    return l % 2 == 0
+l = int(input("l = "))
+
+print(is_even(l))

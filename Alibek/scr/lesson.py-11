@@ -1,0 +1,40 @@
+# try - except
+try:
+    age = int(input("age = "))
+    print(2026 / age)
+except ValueError:
+    print("Ma'nis qate")
+except ZeroDivisionError:
+    print("No'lge hareket")
+except Exception as err:
+    print("Universal qate", err)
+else:
+    print("Qate joq")
+finally:
+    print("Qa'legen jag'day")
+
+
+try:
+    k = int(input("k = "))
+    l = int(input("l = "))
+    print(k / l)
+except ValueError:
+    print("Ma'nis qate")
+except ZeroDivisionError:
+    print("No'lge hareket")
+except Exception as err:
+    print("Universal qate", err)
+else:
+    print("Qate joq")
+finally:
+    print("Qa'legen jag'day")
+
+m  =input("m = ")
+
+try:
+    float(m)
+    print("float")
+except ValueError:
+    print("int")
+except:
+    print("Str")

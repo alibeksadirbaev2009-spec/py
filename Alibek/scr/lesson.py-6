@@ -1,0 +1,32 @@
+# if - else
+# 
+a = int(input("a = "))
+
+if a == 5:
+    print("salem")
+else:
+    print("yaq")
+
+k = int(input("k = "))
+if k > 0:
+    print("on' san")
+else:
+    print("teris san")
+ 
+
+d = int(input("b = "))
+
+if d == 0:
+    print("nol")
+elif d > 0:
+    print("on' san")
+else:   # jazsaqta boladi jazbasaqta boladi 1 manis qalgan jagdayda
+    print("teris san")
+
+l = int(input("l = "))
+if l == 0:
+    print("nol")
+elif l % 2 == 0:
+    print("jup san")
+else:
+    print("taq san")

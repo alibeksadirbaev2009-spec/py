@@ -1,0 +1,62 @@
+#  continue - dawam ettiriw
+a = [5, 6, 4, 3, 4, 7, 8, 0]
+
+for i in a:
+    if i % 2 != 0:
+        continue
+
+    print(i)
+
+# break - toqtatiw
+for i in a:
+    if i == 7:
+        break
+
+    print(i)
+
+k = [5, 9, 22, 3, 4]
+t = 0
+
+for i in a:
+    t += i
+
+print(t) 
+# 2
+
+m = [5, 9, 22, 3, 4]
+e = m[0]
+
+for i in m:
+    if i > e:
+        e = i
+        
+print(e) 
+# 3
+
+
+m = [15, 9, 23, 7, 3, 19]
+n = [6, 23, 9, 3, 19, 25]
+c = []
+
+for i in m:
+    if i in n:
+        c.append(i)
+
+print(c)
+
+
+
+
+#  monolit
+# micro servis  ko'lem 
+# izbe - iz  
+
+a = [1, 2, 3, 4, 5, 3, 6]
+t = a[0]
+
+for i, v in enumerate(a):
+    if t <= v:
+        t = v
+    else:
+        print(i)
+        break

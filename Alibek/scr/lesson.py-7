@@ -1,0 +1,87 @@
+import math
+import abc
+
+from math import abc
+
+import re
+text = input("a = ").lower
+f = bool(re.search(r"[a]", text))
+print(f)
+# match - case
+a = 9
+
+match a:  # exception 
+    case 1: # pattern
+        print("Bir")
+    case 2:  # pattern
+        print("eki")
+    case 3:  # pattern
+        print("ush")
+    case _: # wildcard
+        print("ya1q")
+
+    
+a = int(input("a = "))
+print("Qaysi o'lshemge o'xgertemis ->")
+b = input("O'lshem")
+match b:
+    case "km":
+        result = round(a / 1000, 1)
+        print(f"Juwap: {result}km")
+    case "dm":
+        result = (a * 10)
+        print(f"Juwap: {result}dm")
+    case "sm":
+        result = (a * 100)
+        print(f"Juwap: {result}sm")
+    case "mm":
+        result = (a * 1000)
+        print(f"Juwap: {result}mm")
+    case _:
+        "Uyqla"
+
+a = int(input("a = "))
+match a:
+    case 3:
+        print("u'sh mu'yish")
+    case 4:
+        print("kvadrat")
+    case 5:
+        print("bes mu'yish")
+    case 6:
+        print("alti mu'yish")
+    case _:
+        print("Joq")
+
+        
+# 1 
+k = int(input("k = "))
+match k:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case 4:
+        print("Thoursday")
+    case 5:
+        print("Friday")
+    case 6:
+        print("Saturday")
+    case 7:
+        print("Sunday")
+    case _:
+        print("Nothing")
+
+
+a = [4, 5, 7, 3]
+match a:
+    case [x, 6]:
+        print("e")
+    case [9, y]:
+        print("aa")
+    case [x, y]:
+        print(x + y)
+    case [x, y, *z]:
+        print(x + y + sum(z))

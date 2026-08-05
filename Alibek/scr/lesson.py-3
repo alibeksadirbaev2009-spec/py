@@ -1,0 +1,32 @@
+# List - list []
+
+a = [2, 88, 3, 4, 5]
+
+# Mag'liwmat qosiw
+a.append(4)
+print(a)
+a.remove(2) # ma'nis boyinsha alip taslaw
+a.pop(0) # indeks boyinsha alip taslaw
+print(a)
+
+a.reverse() # ---><---
+print(a)
+b = a.copy
+print(b)
+
+l = a.count(3) # san neshew ekenin aytadi 
+print(l)
+ 
+n = a.index(3) # sanning indekin aniqlap beredi
+print(n)
+
+a.sort() # soartlaydi izbe izlikde
+print(a)
+
+a.insert(3, 111) # u'shinshi indekske 111 di qosti
+print(a)
+
+# is()  in--> ishinde barma
+
+a.clear()
+print(a)

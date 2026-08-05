@@ -1,0 +1,163 @@
+# property
+class MyClass:
+    def __init__(self, a: int, b: int):
+        self.a = a
+        self.b = b
+
+    @property       # o'zderiwshi esabi eshqanday parametr qabil etpeydi
+    def plus(self):
+        return self.a + self.b
+    
+o = MyClass(5, 9)
+print(o.plus)  # plus qa qawsirma kk emes
+
+# self obj pn 
+
+
+class Myclass:
+    n = 0
+    def __init__(self, a: int, b: int):
+        self.a = a
+        self.b = b
+        Myclass.n + 1
+
+    # instance method  -> obj menende cals penen de
+    def plus(self) -> int:
+        return self.a + self.b 
+
+    @classmethod  # class penen
+    def hello(clc):
+        return clc.n
+    
+    @staticmethod   # esh na'rse menen
+    def hi():
+        return 5
+o = Myclass(5, 6)
+b = Myclass(2, 3)
+print(Myclass.hello())
+
+
+# @ - decaratrs
+# 1
+def my_func(func):
+    def wrapper(*args, **kwargs):  
+        result = func(*args, **kwargs)
+        return f"<div>{result}</div>"
+    return wrapper
+
+@my_func
+def main(a, b):
+    return a + b
+
+print(main(6, 9))
+
+
+# 2
+
+def add_tag(tag_name: str):
+    def inner(func):
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs) 
+            return  f"<{tag_name}>{result}</{tag_name}>"
+        return wrapper
+    return inner
+
+@add_tag("div")
+def main2(a: str):
+    return a
+
+print(main2("hi"))
+
+
+
+
+# class instance method, @classmethod, @staticmethod  qalegen bir misal jaratiw erkin tema an'sat emes
+
+ 
+
+# decoratrs haqqinda ma'liwmatlar
+# 🔹 Decorator nima?
+
+# Decorator — bu boshqa funksiyani “o‘rab”, unga qo‘shimcha funksional qo‘shadigan funksiya.
+# Oddiy qilib:
+# Funksiyani o‘zgartirmasdan, unga yangi xususiyat qo‘shish.
+
+def my_decorator(func):
+    def wrapper():
+        print("Funksiya boshlanishi")
+        func()
+        print("Funksiya tugashi")
+    return wrapper
+# Oddiy misol
+@my_decorator
+def salom():
+    print("Salom!")
+
+salom()
+
+
+# 🔹 Bu qanday ishlaydi?
+# @my_decorator — bu aslida shunaqa degani:
+# salom = my_decorator(salom)
+
+# Argumentli decorator
+
+# Agar funksiya argument olsa:
+
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Boshlanish")
+        func(*args, **kwargs)
+        print("Tugash")
+    return wrapper
+
+@my_decorator
+def salom(ism):
+    print(f"Salom, {ism}")
+
+salom("Alibek")
+
+# 🔹 Real hayotdagi ishlatilishi
+# Decoratorlar ko‘p joyda ishlatiladi:
+
+# 1. Log yozish
+def log(func):
+    def wrapper(*args, **kwargs):
+        print(f"{func.__name__} ishga tushdi")
+        return func(*args, **kwargs)
+    return wrapper
+# 2. Vaqtni o‘lchash
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print("Vaqt:", end - start)
+        return result
+    return wrapper
+# 3. Ruxsat tekshirish (login)
+def login_required(func):
+    def wrapper(user):
+        if user == "admin":
+            return func(user)
+        else:
+            print("Ruxsat yo‘q!")
+    return wrapper
+# 🔹 Muhim eslatma
+# Decorator yozganda ko‘pincha functools.wraps ishlatiladi:
+
+from functools import wraps
+
+def my_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs)
+    return wrapper
+
+# Bu funksiyaning nomi va docstring’ini saqlaydi.
+# 🔹 Qisqa xulosa
+# Decorator = funksiya ustiga funksiya
+# @decorator — bu qisqa yozuv
+# Ko‘proq logging, security, timing uchun ishlatiladi
