@@ -70,3 +70,39 @@ async def login(username: str, password: str):
         return {
             "message": "Login successful"
         }
+
+
+@app.get("/profile/{username}")
+async def profile(username: str, password: str):
+    with sqlite3.connect("user.db") as conn:
+        cur = conn.cursor()
+
+        cur.execute(
+            "SELECT firstname, lastname, username, age, password FROM users WHERE username = ?",
+            (username,)
+        )
+
+        user = cur.fetchone()
+
+        if user is None:
+            raise HTTPException(
+                status_code=404,
+                detail="User not found"
+            )
+
+        password_hash = PasswordHash.recommended()
+
+        if not password_hash.verify(password, user[4]):
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid password"
+            )
+
+        return {
+            "firstname": user[0],
+            "lastname": user[1],
+            "username": user[2],
+            "age": user[3]
+        } 
+
+# "donut" python 
